@@ -38,7 +38,7 @@ const Doctors = () => {
     const fetchDoctors = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/user/doctors"
+          "    https://hospital-management-r7hc.onrender.com/api/v1/user/doctors"
         );
         setDoctors(data.doctors);
       } catch (error) {
@@ -52,7 +52,7 @@ const Doctors = () => {
     try {
       let key = search ? search : "";
       const { data } = await axios.get(
-        `http://localhost:4000/api/v1/user/search/${key}`
+        `    https://hospital-management-r7hc.onrender.com/api/v1/user/search/${key}`
       );
 
       setDoctors(data.result);

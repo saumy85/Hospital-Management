@@ -13,7 +13,7 @@ const Message = () => {
     const fetchMessages = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:4000/api/v1/message/messages",
+          "    https://hospital-management-r7hc.onrender.com/api/v1/message/messages",
           { withCredentials: true }
         );
         setMessages(data.messages);

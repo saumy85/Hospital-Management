@@ -15,7 +15,7 @@
 //   //   const fetchAppointments = async () => {
 //   //     try {
 //   //       const { data } = await axios.get(
-//   //         "http://localhost:4000/api/v1/appointment/getAppointment",
+//   //         "    https://hospital-management-r7hc.onrender.com/api/v1/appointment/getAppointment",
 //   //         { withCredentials: true }
 //   //       );
 //   //       setAppointments(data.appointment);
@@ -55,7 +55,7 @@
 //   // const handleUpdateStatus = async (appointmentId, status) => {
 //   //   try {
 //   //     const { data } = await axios.put(
-//   //       `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+//   //       `    https://hospital-management-r7hc.onrender.com/api/v1/appointment/update/${appointmentId}`,
 //   //       { status },
 //   //       { withCredentials: true }
 //   //     );
@@ -150,7 +150,7 @@ const AccountSettings = () => {
     // e.preventDefault();
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/user/update/${user._id}`,
+        `    https://hospital-management-r7hc.onrender.com/api/v1/user/update/${user._id}`,
         {
           firstName,
           lastName,
@@ -179,7 +179,7 @@ const AccountSettings = () => {
     setPhone(user.phone);
     setAdhar(user.Adhar);
     setGender(user.gender);
-    setDob(user.dob ? user.dob.substring(0, 10) : ""); 
+    setDob(user.dob ? user.dob.substring(0, 10) : "");
   }, [user]);
 
   const [person, setPerson] = useState("");

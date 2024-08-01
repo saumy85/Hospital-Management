@@ -32,7 +32,7 @@ function Data() {
     const fetchAppointment = async () => {
       try {
         const { data } = await axios.get(
-          ` http://localhost:4000/api/v1/appointment/getOneAppointment/${user._id}`,
+          `     https://hospital-management-r7hc.onrender.com/api/v1/appointment/getOneAppointment/${user._id}`,
           { withCredentials: true }
         );
         setStatus(data.appointments.status);
@@ -80,9 +80,12 @@ function Data() {
   const navigate = useNavigate();
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/patient/logout", {
-        withCredentials: true,
-      })
+      .get(
+        "    https://hospital-management-r7hc.onrender.com/api/v1/user/patient/logout",
+        {
+          withCredentials: true,
+        }
+      )
       .then((resp) => {
         toast.success(resp.data.message);
         setIsAuthenticated(false);

@@ -61,7 +61,7 @@ function Data() {
   //   const fetchAppointment = async () => {
   //     try {
   //       const { data } = await axios.get(
-  //         ` http://localhost:4000/api/v1/appointment/getOneAppointment/${patient._id}`,
+  //         `     https://hospital-management-r7hc.onrender.com/api/v1/appointment/getOneAppointment/${patient._id}`,
   //         { withCredentials: true }
   //       );
   //       setStatus(data.appointments.status);
@@ -108,7 +108,7 @@ function Data() {
     const fetchAppointment = async () => {
       try {
         const { data } = await axios.get(
-          ` http://localhost:4000/api/v1/appointment/getOneAppointmentAdmin/${patient_id}`,
+          `     https://hospital-management-r7hc.onrender.com/api/v1/appointment/getOneAppointmentAdmin/${patient_id}`,
           { withCredentials: true }
         );
         console.log(data);
@@ -129,7 +129,7 @@ function Data() {
   const handleSubmit = async () => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/appointment/update/${patient_id}`,
+        `    https://hospital-management-r7hc.onrender.com/api/v1/appointment/update/${patient_id}`,
         { status, date },
         { withCredentials: true }
       );
@@ -142,7 +142,7 @@ function Data() {
 
   // const handleLogout = async () => {
   //   await axios
-  //     .get("http://localhost:4000/api/v1/patient/patient/logout", {
+  //     .get("    https://hospital-management-r7hc.onrender.com/api/v1/patient/patient/logout", {
   //       withCredentials: true,
   //     })
   //     .then((resp) => {

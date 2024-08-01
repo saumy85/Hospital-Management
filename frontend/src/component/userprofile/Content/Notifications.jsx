@@ -23,7 +23,7 @@ function Notifications() {
     const fetchAppointment = async () => {
       try {
         const { data } = await axios.get(
-          ` http://localhost:4000/api/v1/appointment/getOneAppointment/${user._id}`,
+          `     https://hospital-management-r7hc.onrender.com/api/v1/appointment/getOneAppointment/${user._id}`,
           { withCredentials: true }
         );
         setReport(data.appointments.reports.url);

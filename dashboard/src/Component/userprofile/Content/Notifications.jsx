@@ -42,7 +42,7 @@ function Notifications() {
 
   //     await axios
   //       .put(
-  //         `http://localhost:4000/api/v1/appointment/updateDocument/${patient_id}`,
+  //         `    https://hospital-management-r7hc.onrender.com/api/v1/appointment/updateDocument/${patient_id}`,
   //         formData,
   //         {
   //           withCredentials: true,
@@ -92,7 +92,7 @@ function Notifications() {
       formData.append("receipt", receipt);
 
       const response = await axios.put(
-        `http://localhost:4000/api/v1/appointment/updateDocument/${e}`,
+        `    https://hospital-management-r7hc.onrender.com/api/v1/appointment/updateDocument/${e}`,
         formData,
         {
           withCredentials: true,

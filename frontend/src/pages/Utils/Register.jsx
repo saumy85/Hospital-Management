@@ -25,7 +25,7 @@ const Register = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/patientregister",
+          "    https://hospital-management-r7hc.onrender.com/api/v1/user/patientregister",
           { firstName, lastName, email, phone, Adhar, dob, gender, password },
           {
             withCredentials: true,

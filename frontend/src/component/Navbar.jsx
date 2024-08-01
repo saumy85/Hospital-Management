@@ -15,9 +15,12 @@ const Navbar = () => {
   const navigate = useNavigate();
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/patient/logout", {
-        withCredentials: true,
-      })
+      .get(
+        "    https://hospital-management-r7hc.onrender.com/api/v1/user/patient/logout",
+        {
+          withCredentials: true,
+        }
+      )
       .then((resp) => {
         toast.success(resp.data.message);
         setIsAuthenticated(false);

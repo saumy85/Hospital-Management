@@ -15,7 +15,7 @@
 //   //   const fetchAppointments = async () => {
 //   //     try {
 //   //       const { data } = await axios.get(
-//   //         "http://localhost:4000/api/v1/appointment/getAppointment",
+//   //         "    https://hospital-management-r7hc.onrender.com/api/v1/appointment/getAppointment",
 //   //         { withCredentials: true }
 //   //       );
 //   //       setAppointments(data.appointment);
@@ -55,7 +55,7 @@
 //   // const handleUpdateStatus = async (appointmentId, status) => {
 //   //   try {
 //   //     const { data } = await axios.put(
-//   //       `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+//   //       `    https://hospital-management-r7hc.onrender.com/api/v1/appointment/update/${appointmentId}`,
 //   //       { status },
 //   //       { withCredentials: true }
 //   //     );
@@ -165,7 +165,7 @@ const AccountSettings = () => {
     // e.preventDefault();
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/data.appointments/update/${patient_id}`,
+        `    https://hospital-management-r7hc.onrender.com/api/v1/data.appointments/update/${patient_id}`,
         {
           firstName,
           lastName,
@@ -193,7 +193,7 @@ const AccountSettings = () => {
     const fetchAppointment = async () => {
       try {
         const { data } = await axios.get(
-          ` http://localhost:4000/api/v1/appointment/getOneAppointmentAdmin/${patient_id}`,
+          `     https://hospital-management-r7hc.onrender.com/api/v1/appointment/getOneAppointmentAdmin/${patient_id}`,
           { withCredentials: true }
         );
         console.log(data);
@@ -220,7 +220,7 @@ const AccountSettings = () => {
   const handleDelete = async (pId) => {
     try {
       const { data } = await axios.delete(
-        ` http://localhost:4000/api/v1/appointment/delete/${pId}`,
+        `     https://hospital-management-r7hc.onrender.com/api/v1/appointment/delete/${pId}`,
         { withCredentials: true }
       );
       if (data.success) {
