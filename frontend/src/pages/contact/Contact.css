@@ -1,0 +1,145 @@
+.Spacing {
+    padding: 6rem 5rem !important;
+}
+
+.Spacing h2 {
+    font-family: "Alegreya", serif !important;
+    text-align: center !important;
+    color: var(--SomeBlue) !important;
+}
+
+.Spacing .content2 {
+    text-align: center !important;
+    align-content: center !important;
+}
+
+.Spacing .content1 {
+    text-align: center !important;
+    display: flex !important;
+    padding: 2rem !important;
+}
+
+.Spacing .content2 {
+ 
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-direction: column !important;
+}
+
+@media (max-width: 720px) {
+    .Spacing {
+        padding: 3rem 4rem !important;
+    }
+
+    .Spacing .content1 {
+        text-align: left !important;
+        display: flex !important;
+        padding: 0rem !important;
+    }
+}
+
+:root {
+    --darkblue-color: #003369ff !important;
+    --Aqua: hsl(179, 100%, 41%, 50%) !important;
+    --Grey-color: #B4B5B6 !important;
+    --DarkColor: #181E1E !important;
+    --SomeBlue: #065481 !important;
+    --Peach: #FF6864 !important;
+    --Redd: #E63946 !important;
+    --SomeWhite: #FFFAFA !important;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box !important;
+}
+
+body {
+    margin: 0 !important;
+    font-family: "Inter", sans-serif !important;
+}
+
+html {
+    scroll-behavior: smooth !important;
+}
+
+.wrapper {
+    max-width: 1024px !important;
+    margin: 0 auto !important;
+}
+
+.Sizing {
+    max-width: 80% !important;
+    margin: 0 auto !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+/*Sections*/
+
+section {
+    padding: 10px 10px !important;
+    color: #000 !important;
+}
+
+section h2 {
+    font-weight: 900 !important;
+    font-size: 40px !important;
+    line-height: 4px !important;
+}
+
+.White {
+    background: #fff !important;
+}
+
+.black {
+    background: var(--Aqua) !important;
+}
+
+section .content-container {
+    display: flex !important;
+    max-width: 250rem !important;
+    margin: 0 auto !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/*Tablet Version*/
+@media (max-width: 1040px) {
+    .wrapper {
+        max-width: 694px !important;
+    }
+}
+
+/*Smartphone Version*/
+@media (max-width: 720px) {
+    .content2{
+        margin-top: 40px;
+    }
+    .wrapper {
+        padding: 0, 32px !important;
+    }
+
+    section h2 {
+        font-size: 24px !important;
+    }
+
+    .Sizing {
+        max-width: 50% !important;
+        margin: 0 auto !important;
+    }
+
+    section h2::after {
+        width: 50px !important;
+        bottom: 0 !important;
+    }
+}
