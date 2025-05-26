@@ -1,40 +1,33 @@
-import expres from "express";
-import { config } from "dotenv";
+import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import fileUpload from "express-fileupload";
-import { dbconnect } from "./databse/dbconnect.js";
-import messageRouter from "./router/messageRouter.js";
-import { errorMiddleware } from "./middlewares/errorMiddleware.js";
-import userRouter from "./router/userRouter.js";
-import appointmentRouter from "./router/appointmentRouter.js";
-const app = expres();
-config({ path: "./config/.env" });
+
+
+const app = express();
+
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URI, process.env.DASHBOARD_URI],
-    method: ["GET", "POST", "DELETE", "PUT"],
+    origin:process.env.CORS_ORIGIN,
     credentials: true,
     optionSuccessStatus: 200,
   })
 );
 app.use(cookieParser());
-app.use(expres.json());
-app.use(expres.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"))
 
-app.use(
-  fileUpload({
-    useTempFiles: true,
-    tempFileDir: "/tmp/",
-  })
-);
+
+
+//routes
+import messageRouter from "./router/messageRouter.js";
 app.use("/api/v1/message", messageRouter);
 
+import userRouter from "./router/userRouter.js";
 app.use("/api/v1/user", userRouter);
+
+import appointmentRouter from "./router/appointmentRouter.js";
 app.use("/api/v1/appointment", appointmentRouter);
 
-dbconnect();
-
-app.use(errorMiddleware);
-export default app;
+export  {app};

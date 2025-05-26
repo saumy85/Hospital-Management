@@ -15,7 +15,7 @@ import {
   isAdminAuthentication,
   isPatientAuthentication,
   isDoctor,
-} from "../middlewares/auth.js";
+} from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 

@@ -1,7 +1,7 @@
 import { Appointment } from "../models/appointmentSchema.js";
 import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
-import ErrorHandler from "../middlewares/errorMiddleware.js";
-import { User } from "../models/userSchema.js";
+import ErrorHandler from "../utils/ApiError.js";
+import { User } from "../models/user.Schema.js";
 
 import cloudinary from "cloudinary";
 export const postAppointment = catchAsyncErrors(async (req, resp, next) => {

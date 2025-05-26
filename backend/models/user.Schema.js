@@ -22,14 +22,14 @@ const userSchema = new mongoose.Schema({
   phone: {
     type: String,
     required: [true, "Phone Is Required!"],
-    minLength: [10, "Phone Number Must Contain Exact 10 Digits!"],
-    maxLength: [10, "Phone Number Must Contain Exact 10 Digits!"],
+    minLength: [10, "Phone Number Must Contains 10 Digits!"],
+    maxLength: [10, "Phone Number Must Contains 10 Digits!"],
   },
   Adhar: {
     type: String,
     required: [true, "NIC Is Required!"],
-    minLength: [12, "Adhar Must Contain Only 12 Digits!"],
-    maxLength: [12, "Adhar Must Contain Only 12 Digits!"],
+    minLength: [12, "Adhar Must Contain 12 Digits!"],
+    maxLength: [12, "Adhar Must Contain 12 Digits!"],
   },
   dob: {
     type: Date,
@@ -61,7 +61,12 @@ const userSchema = new mongoose.Schema({
   address: {
     type: String,
   },
+  refreshToken:{
+    type: String,
+  }
   
+},{
+    timestamps:true
 });
 
 userSchema.pre("save", async function (next) {
@@ -75,10 +80,33 @@ userSchema.methods.comparePassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-userSchema.methods.generateJsonWebToken = function () {
-  return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
-    expiresIn: process.env.JWT_EXPIRES,
-  });
-};
+userSchema.methods.generateAccessToken = async function(){
+    return jwt.sign(
+        {
+            _id:this._id,
+            email : this.email,
+            firstName: this.firstName,
+            lastName: this.lastName
+        },
+       process.env.ACCESS_TOKEN_SECRET,
+       {
+         expiresIn:  process.env.ACCESS_TOKEN_EXPIRY
+       }
+
+    )
+}
+
+userSchema.methods.generateRefreshToken = async function(){
+    return jwt.sign(
+        { 
+            _id:this._id,
+        },
+       process.env.REFRESH_TOKEN_SECRET,
+       {
+         expiresIn:  process.env.REFRESH_TOKEN_EXPIRY
+       }
+
+    )
+}
 
 export const User = mongoose.model("User", userSchema);

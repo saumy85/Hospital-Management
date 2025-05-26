@@ -3,7 +3,7 @@ import {
   getAllMessages,
   sendMessage,
 } from "../controller/messageController.js";
-import { isAdminAuthentication } from "../middlewares/auth.js";
+import { isAdminAuthentication } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 
